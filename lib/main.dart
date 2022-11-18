@@ -31,23 +31,12 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
-
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   bool _flag = false;
 
   _click() async {
     setState(() {
       _flag = !_flag;
-    });
-  }
-
-
-  void _incrementCounter() {
-    setState(() {
-     
-      _counter++;
-      
     });
   }
 
@@ -62,43 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
           Text("ガハハハ")
         ]),
       ),
-      body: Column(children: [
-        Text(
-          '$_counter',
-          style: Theme.of(context).textTheme.headline4,
-        ),
-        if (_counter % 2 == 0)
-        Text(
-          '偶数です',
-          style: TextStyle(fontSize: 20, color: Colors.red)
-        ),
-        const Center(
-          child: Icon(FontAwesomeIcons.gift, color:Colors.teal)
-        ),
-        TextButton(
-          onPressed: () => {print("ボタンが押されたよ")},
-          child: const Text("テキストボタン"),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: const [
-            Icon(
-              Icons.favorite,
-              color: Colors.pink,
-              size: 24.0,
-            ),
-            Icon(
-              Icons.audiotrack,
-              color: Colors.green,
-              size: 24.0,
-            ),
-            Icon(
-              Icons.beach_access,
-              color: Colors.blue,
-              size: 24.0,
-            ),
-          ],
-        ),
+      body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
             AnimatedOpacity(
                 opacity: _flag ? 0.1 : 1.0,
                 duration: const Duration(seconds: 3),
@@ -120,12 +75,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 50,
                     child: Container(color: Colors.green)))
       ]),
+
+
         floatingActionButton: FloatingActionButton(
         onPressed: _click, child: const Icon(Icons.add),
         tooltip: 'Increment',
         ),
+
       drawer: const Drawer(child: Center(child: Text("Drawer"))),
       endDrawer: const Drawer(child: Center(child: Text("EndDrawer"))),
+
     );
      
   }
