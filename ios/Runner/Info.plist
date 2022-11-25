@@ -47,5 +47,12 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<!-- dictタグ内の追記する部分のみ抜粋-->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>wanna use</string>
+	<key>NSCameraUsageDescription</key>
+	<string>wanna use</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>wanna use</string>
 </dict>
 </plist>
